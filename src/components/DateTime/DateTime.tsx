@@ -4,8 +4,16 @@ import React from 'react';
 import './style.css';
 
 //V1 NATIVE
-const DateTime = () => {
-  return <input aria-label="Date" type="date" />;
+const DateTime = ({ name, defaultValue, onChange }) => {
+  return (
+    <input
+      aria-label="Date"
+      type="date"
+      name={name}
+      defaultValue={defaultValue}
+      onChange={onChange}
+    />
+  );
 };
 
 export default DateTime;
