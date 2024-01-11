@@ -1,8 +1,13 @@
 import { Link, NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 import './style.css';
-import React from 'react';
-import Logo from '../../assets/logo.png';
+// import Logo from '../../assets/logo.png';
+
+/**
+ * Create a Header component
+ *
+ * @return {JSX.Element}
+ */
 
 const NavContainer = styled.nav`
   display: flex;
@@ -15,11 +20,11 @@ const NavContainer = styled.nav`
   // width: 100%;
 `;
 
-const Header = () => {
+const Header = (): JSX.Element => {
   return (
     <NavContainer>
       <Link className="header_logo" to="/">
-        <img className="header_logo_img" src={Logo} alt="WealthHealth logo" />
+        <img className="header_logo_img" alt="WealthHealth logo" />
       </Link>
       {/* <p>HRnet</p> */}
       <div className="header_nav">

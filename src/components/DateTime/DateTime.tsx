@@ -3,8 +3,20 @@ import React from 'react';
 // import { useState } from 'react';
 import './style.css';
 
+/**
+ * Create a Date Picker component
+ *
+ * @return {JSX.Element}
+ */
+
+type DateProps = {
+  name: string;
+  defaultValue: string;
+  onChange: any;
+};
+
 //V1 NATIVE
-const DateTime = ({ name, defaultValue, onChange }) => {
+const DateTime = ({ name, defaultValue, onChange }: DateProps): JSX.Element => {
   return (
     <input
       aria-label="Date"

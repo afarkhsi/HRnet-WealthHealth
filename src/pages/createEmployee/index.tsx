@@ -1,12 +1,10 @@
-import DateTime from '../../components/DateTime/DateTime.tsx';
-import React, { useState } from 'react';
-// import Modal from '../../components/Modal/Modal.tsx';
-// import ModalConfirm from '../../components/ModalConfirm/ModalConfirm.tsx';
+import DateTime from '../../components/DateTime/DateTime';
+
 import Modal from 'react-modal';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import useSubmitEmployee from '../../components/ModalConfirm/useSubmitEmployee.js';
-// import useSubmitEmployee from '../../components/ModalConfirm/useSubmitEmployee.js';
+import { Link } from 'react-router-dom';
 
 const customStyles = {
   content: {
@@ -46,12 +44,12 @@ const CreateEmployee = () => {
   } = useSubmitEmployee();
 
   return (
-    <body>
+    <section>
       <div className="title">
         <h1>HRnet</h1>
       </div>
       <div className="container">
-        <a href="employee-list.html">View Current Employees</a>
+        <Link to="/employee/list">View Current Employees</Link>
         <h2>Create Employee</h2>
         <form action="#" id="create-employee" onSubmit={handleOnSubmit}>
           <label htmlFor="first-name">First Name</label>
@@ -166,7 +164,7 @@ const CreateEmployee = () => {
         <FontAwesomeIcon icon={faXmark} onClick={closeModal} />
       </Modal>
       {/* {modalIsOpen ? <Modal /> : ''} */}
-    </body>
+    </section>
   );
 };
 
