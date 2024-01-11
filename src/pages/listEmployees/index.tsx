@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import React from 'react';
 import Table from '../../components/Table/Table';
 
 // EMPLOYEE LIST PAGE

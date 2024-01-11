@@ -1,4 +1,3 @@
-import React from 'react';
 import DataTable from 'react-data-table-component';
 import { columns, data } from './useDataTable';
 
@@ -9,7 +8,7 @@ import { columns, data } from './useDataTable';
  */
 
 const Table = (): JSX.Element => {
-  return <DataTable columns={columns} data={data} />;
+  return <DataTable columns={columns} data={data} pagination />;
 };
 
 export default Table;

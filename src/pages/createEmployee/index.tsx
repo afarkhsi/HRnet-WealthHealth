@@ -156,6 +156,7 @@ const CreateEmployee = () => {
         onRequestClose={closeModal}
         style={customStyles}
         contentLabel="Example Modal"
+        ariaHideApp={false}
       >
         <div id="confirmation" className="modal">
           Employee Created!

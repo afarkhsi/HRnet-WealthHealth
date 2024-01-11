@@ -1,7 +1,8 @@
 import { Link, NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 import './style.css';
-// import Logo from '../../assets/logo.png';
+
+const Logo = require('../../assets/logo.png');
 
 /**
  * Create a Header component
@@ -24,7 +25,7 @@ const Header = (): JSX.Element => {
   return (
     <NavContainer>
       <Link className="header_logo" to="/">
-        <img className="header_logo_img" alt="WealthHealth logo" />
+        <img className="header_logo_img" src={Logo} alt="WealthHealth logo" />
       </Link>
       {/* <p>HRnet</p> */}
       <div className="header_nav">
