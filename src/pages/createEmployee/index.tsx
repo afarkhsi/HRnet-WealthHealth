@@ -1,10 +1,9 @@
 import DateTime from '../../components/DateTime/DateTime';
-
+import './style.css';
 import Modal from 'react-modal';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import useSubmitEmployee from '../../components/ModalConfirm/useSubmitEmployee.js';
-import { Link } from 'react-router-dom';
 
 const customStyles = {
   content: {
@@ -58,14 +57,19 @@ const CreateEmployee = () => {
         <h1>HRnet</h1>
       </div>
       <div className="container">
-        <Link to="/employee/list">View Current Employees</Link>
         <h2>Create Employee</h2>
-        <form action="#" id="create-employee" onSubmit={handleOnSubmit}>
+        <form
+          action="#"
+          id="create-employee"
+          // className="form-group"
+          onSubmit={handleOnSubmit}
+        >
           <label htmlFor="first-name">First Name</label>
           <input
             type="text"
             name="first-name"
             id="first-name"
+            className="form-control"
             placeholder="Enter Firstname"
             defaultValue={firstName}
             // onChange={handleOnChange}
@@ -81,6 +85,7 @@ const CreateEmployee = () => {
             type="text"
             name="last-name"
             id="last-name"
+            className="form-control"
             placeholder="Enter Lastname"
             defaultValue={lastName}
             // onChange={handleOnChange}
@@ -124,6 +129,7 @@ const CreateEmployee = () => {
             <input
               name="street"
               id="street"
+              className="form-control"
               type="text"
               placeholder="Enter Street"
               defaultValue={street}
@@ -139,6 +145,7 @@ const CreateEmployee = () => {
             <input
               name="city"
               id="city"
+              className="form-control"
               type="text"
               placeholder="Enter City"
               defaultValue={city}
@@ -167,6 +174,7 @@ const CreateEmployee = () => {
             <input
               name="zip-code"
               id="zip-code"
+              className="form-control"
               type="number"
               placeholder="Enter Zip Code"
               defaultValue={zipCode}
@@ -197,7 +205,9 @@ const CreateEmployee = () => {
             <option>Human Resources</option>
             <option>Legal</option>
           </select>
-          <button>Save</button>
+          <button type="submit" className="btn">
+            Save
+          </button>
         </form>
       </div>
       <Modal
@@ -208,7 +218,7 @@ const CreateEmployee = () => {
         ariaHideApp={false}
       >
         <div id="confirmation" className="modal">
-          Employee Created!
+          <p>Employee Created! ahvazehuehza</p>
         </div>
         {/* <button onClick={closeModal}>close</button> */}
         <FontAwesomeIcon icon={faXmark} onClick={closeModal} />

@@ -19,6 +19,7 @@ const NavContainer = styled.nav`
   min-height: 80px;
   // margin: 0 auto;
   // width: 100%;
+  border-bottom: 1px solid #7ba07b;
 `;
 
 const Header = (): JSX.Element => {

@@ -6,7 +6,7 @@
   font-weight: bold;
 }
 
-.header_nav_link :hover {
+.header_nav_link:hover {
   color: green;
 }
 

@@ -22,6 +22,7 @@ const DateTime = ({ name, defaultValue, onChange }: DateProps): JSX.Element => {
       aria-label="Date"
       type="date"
       name={name}
+      className="form-control"
       defaultValue={defaultValue}
       onChange={onChange}
     />

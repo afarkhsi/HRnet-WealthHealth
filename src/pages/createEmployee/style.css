@@ -1,0 +1,31 @@
+#create-employee {
+  max-width: 300px;
+  width: 100%;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+#department {
+  margin-bottom: 1.5rem;
+}
+.btn {
+  background-color: #7ba07b;
+  color: white;
+  text-align: center;
+  height: 30px;
+  border-radius: 5px;
+  border-color: #7ba07b;
+}
+
+.form-control {
+  height: 30px;
+  border-radius: 5px;
+  border-color: #b6b9b6;
+  padding-left: 6px;
+  padding-right: 6px;
+}
+
+.form-control:focus-visible {
+  border-color: #095a09;
+}
