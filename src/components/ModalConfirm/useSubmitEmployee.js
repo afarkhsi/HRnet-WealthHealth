@@ -14,7 +14,6 @@ const useSubmitEmployee = () => {
   const [zipCode, setZipCode] = useState('');
   const {
     error,
-    employeesList,
     // id,
     // firstName,
     // lastName,
@@ -72,18 +71,18 @@ const useSubmitEmployee = () => {
     setIsOpen(false);
   }
 
-  const employees = JSON.parse(localStorage.getItem('employees')) || [];
-  const employee = {
-    firstName: firstName,
-    lastName: lastName,
-    dateOfBirth: dateOfBirth,
-    startDate: startDate,
-    department: department,
-    street: street,
-    city: city,
-    state: state,
-    zipCode: zipCode,
-  };
+  // const employees = JSON.parse(localStorage.getItem('employees')) || [];
+  // const employee = {
+  //   firstName: firstName,
+  //   lastName: lastName,
+  //   dateOfBirth: dateOfBirth,
+  //   startDate: startDate,
+  //   department: department,
+  //   street: street,
+  //   city: city,
+  //   state: state,
+  //   zipCode: zipCode,
+  // };
 
   const dispatch = useDispatch();
 
@@ -101,12 +100,23 @@ const useSubmitEmployee = () => {
     // city: ${city},
     // state: ${state},
     // zipCode: ${zipCode}`);
+    let employee = {
+      firstName: firstName,
+      lastName: lastName,
+      dateOfBirth: dateOfBirth,
+      startDate: startDate,
+      department: department,
+      street: street,
+      city: city,
+      state: state,
+      zipCode: zipCode,
+    };
     try {
       if (employee !== null) {
-        employees.push(employee);
+        // employees.push(employee);
         dispatch(createEmployeeSlice.actions.createEmployeeSuccess(employee));
-        localStorage.setItem('employees', JSON.stringify(employees));
-        console.log(`Nouveau profil d'employé ajouté:`, employees);
+        // localStorage.setItem('employees', JSON.stringify(employee));
+        console.log(`Nouveau profil d'employé ajouté:`, employee);
         openModal();
       }
     } catch (error) {
@@ -126,8 +136,12 @@ const useSubmitEmployee = () => {
   // console.log(firstName.value, lastName.value);
   // localStorage.setItem('employees', JSON.stringify(employees));
 
+  const { employeesList } = useSelector((state) => state.createEmployee);
+  localStorage.setItem('employees', JSON.stringify(employeesList));
+
   return {
     // handleOnChange,
+    employeesList,
     handleOnSubmit,
     modalIsOpen,
     closeModal,

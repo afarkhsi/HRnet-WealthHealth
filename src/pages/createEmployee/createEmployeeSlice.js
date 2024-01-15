@@ -14,7 +14,7 @@ const initialState = {
   // city: localStorage.getItem('city') || '',
   // state: localStorage.getItem('state') || '',
   // zipCode: localStorage.getItem('zipCode') || '',
-  employeesList: '',
+  employeesList: [],
   error: null,
 };
 
@@ -48,7 +48,7 @@ const createEmployeeSlice = createSlice({
       // state.street = action.payload;
       // state.city = action.payload;
       // state.state = action.payload;
-      state.employeesList = action.payload;
+      state.employeesList.unshift(action.payload);
       state.error = null;
       state.isLoading = false;
     },

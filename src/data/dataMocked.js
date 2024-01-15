@@ -237,7 +237,7 @@ const states = [
   },
 ];
 
-const employeesList = [
+const employeesListMocked = [
   {
     id: 1,
     firstName: 'James',
@@ -272,4 +272,4 @@ const departments = [
   { name: 'Legal', value: 'Legal' },
 ];
 
-export { states, employeesList, departments };
+export { states, employeesListMocked, departments };
