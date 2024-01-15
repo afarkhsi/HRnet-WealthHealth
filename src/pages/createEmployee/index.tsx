@@ -28,7 +28,7 @@ const CreateEmployee = () => {
   //   setIsOpen(false);
   // }
   const {
-    handleOnChange,
+    // handleOnChange,
     handleOnSubmit,
     modalIsOpen,
     closeModal,
@@ -41,6 +41,15 @@ const CreateEmployee = () => {
     city,
     state,
     zipCode,
+    setFirstName,
+    setLastName,
+    setDateOfBirth,
+    setStartDate,
+    setDepartment,
+    setStreet,
+    setCity,
+    setState,
+    setZipCode,
   } = useSubmitEmployee();
 
   return (
@@ -59,7 +68,11 @@ const CreateEmployee = () => {
             id="first-name"
             placeholder="Enter Firstname"
             defaultValue={firstName}
-            onChange={handleOnChange}
+            // onChange={handleOnChange}
+            // onChange={(e) => e.target.value}
+            onChange={(e) => {
+              setFirstName(e.target.value);
+            }}
             required
           />
 
@@ -70,7 +83,11 @@ const CreateEmployee = () => {
             id="last-name"
             placeholder="Enter Lastname"
             defaultValue={lastName}
-            onChange={handleOnChange}
+            // onChange={handleOnChange}
+            // onChange={(e) => e.target.value}
+            onChange={(e) => {
+              setLastName(e.target.value);
+            }}
             required
           />
 
@@ -78,14 +95,26 @@ const CreateEmployee = () => {
           <DateTime
             name="date-of-birth"
             defaultValue={dateOfBirth}
-            onChange={handleOnChange}
+            // onChange={handleOnChange}
+            // onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
+            //   event.target.value
+            // }
+            onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+              setDateOfBirth(event.target.value);
+            }}
           />
 
           <label htmlFor="start-date">Start Date</label>
           <DateTime
             name="start-date"
             defaultValue={startDate}
-            onChange={handleOnChange}
+            // onChange={handleOnChange}
+            // onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
+            //   event.target.value
+            // }
+            onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+              setStartDate(event.target.value);
+            }}
           />
 
           <fieldset className="address">
@@ -98,7 +127,11 @@ const CreateEmployee = () => {
               type="text"
               placeholder="Enter Street"
               defaultValue={street}
-              onChange={handleOnChange}
+              // onChange={handleOnChange}
+              // onChange={(e) => e.target.value}
+              onChange={(e) => {
+                setStreet(e.target.value);
+              }}
               required
             />
 
@@ -109,7 +142,11 @@ const CreateEmployee = () => {
               type="text"
               placeholder="Enter City"
               defaultValue={city}
-              onChange={handleOnChange}
+              // onChange={handleOnChange}
+              // onChange={(e) => e.target.value}
+              onChange={(e) => {
+                setCity(e.target.value);
+              }}
               required
             />
 
@@ -118,7 +155,11 @@ const CreateEmployee = () => {
               name="state"
               id="state"
               defaultValue={state}
-              onChange={handleOnChange}
+              // onChange={handleOnChange}
+              // onChange={(e) => e.target.value}
+              onChange={(e) => {
+                setState(e.target.value);
+              }}
               // required
             ></select>
 
@@ -129,7 +170,11 @@ const CreateEmployee = () => {
               type="number"
               placeholder="Enter Zip Code"
               defaultValue={zipCode}
-              onChange={handleOnChange}
+              // onChange={handleOnChange}
+              // onChange={(e) => e.target.value}
+              onChange={(e) => {
+                setZipCode(e.target.value);
+              }}
               required
             />
           </fieldset>
@@ -139,7 +184,11 @@ const CreateEmployee = () => {
             name="department"
             id="department"
             defaultValue={department}
-            onChange={handleOnChange}
+            // onChange={handleOnChange}
+            // onChange={(e) => e.target.value}
+            onChange={(e) => {
+              setDepartment(e.target.value);
+            }}
             required
           >
             <option>Sales</option>

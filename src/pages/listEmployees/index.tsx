@@ -6,13 +6,13 @@ const Employees = () => {
   const employees = localStorage.getItem('employees');
   document.title = 'HRnet - Current Employees';
   return (
-    <div>
+    <section>
       <div id="employee-div" className="container">
         <h1>Current Employees</h1>
         {employees === null ? <div>Aucune données disponibles</div> : <Table />}
         <Link to="/">Home</Link>
       </div>
-    </div>
+    </section>
   );
 };
 

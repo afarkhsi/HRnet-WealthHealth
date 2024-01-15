@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import createEmployeeSlice from '../../pages/createEmployee/createEmployeeSlice';
 
 const useSubmitEmployee = () => {
   const [firstName, setFirstName] = useState('');
@@ -10,42 +12,56 @@ const useSubmitEmployee = () => {
   const [city, setCity] = useState('');
   const [state, setState] = useState('');
   const [zipCode, setZipCode] = useState('');
+  const {
+    error,
+    employeesList,
+    // id,
+    // firstName,
+    // lastName,
+    // dateOfBirth,
+    // startDate,
+    // department,
+    // street,
+    // city,
+    // state,
+    // zipCode,
+  } = useSelector((state) => state.createEmployee);
 
-  const handleOnChange = (e) => {
-    const { name, value } = e.target;
-    switch (name) {
-      case 'first-name':
-        setFirstName(value);
-        break;
-      case 'last-name':
-        setLastName(value);
-        break;
-      case 'date-of-birth':
-        setDateOfBirth(value);
-        break;
-      case 'start-date':
-        setStartDate(value);
-        break;
-      case 'department':
-        setDepartment(value);
-        break;
-      case 'street':
-        setStreet(value);
-        break;
-      case 'city':
-        setCity(value);
-        break;
-      case 'state':
-        setState(value);
-        break;
-      case 'zip-code':
-        setZipCode(value);
-        break;
+  // const handleOnChange = (e) => {
+  //   const { name, value } = e.target;
+  //   switch (name) {
+  //     case 'first-name':
+  //       setFirstName(value);
+  //       break;
+  //     case 'last-name':
+  //       setLastName(value);
+  //       break;
+  //     case 'date-of-birth':
+  //       setDateOfBirth(value);
+  //       break;
+  //     case 'start-date':
+  //       setStartDate(value);
+  //       break;
+  //     case 'department':
+  //       setDepartment(value);
+  //       break;
+  //     case 'street':
+  //       setStreet(value);
+  //       break;
+  //     case 'city':
+  //       setCity(value);
+  //       break;
+  //     case 'state':
+  //       setState(value);
+  //       break;
+  //     case 'zip-code':
+  //       setZipCode(value);
+  //       break;
 
-      default:
-        break;
-    }
-  };
+  //     default:
+  //       break;
+  //   }
+  // };
 
   const [modalIsOpen, setIsOpen] = useState(false);
   function openModal() {
@@ -69,8 +85,11 @@ const useSubmitEmployee = () => {
     zipCode: zipCode,
   };
 
+  const dispatch = useDispatch();
+
   const handleOnSubmit = async (e) => {
     e.preventDefault();
+    dispatch(createEmployeeSlice.actions.createEmployeePending());
     // console.log(`Nouveau profil d'employé créé:
 
     // firstName: ${firstName},
@@ -82,10 +101,22 @@ const useSubmitEmployee = () => {
     // city: ${city},
     // state: ${state},
     // zipCode: ${zipCode}`);
-    employees.push(employee);
-    localStorage.setItem('employees', JSON.stringify(employees));
-    console.log(`Nouveau profil d'employé ajouté:`, employees);
-    openModal();
+    try {
+      if (employee !== null) {
+        employees.push(employee);
+        dispatch(createEmployeeSlice.actions.createEmployeeSuccess(employee));
+        localStorage.setItem('employees', JSON.stringify(employees));
+        console.log(`Nouveau profil d'employé ajouté:`, employees);
+        openModal();
+      }
+    } catch (error) {
+      console.log('erreur signalée:', error);
+      dispatch(createEmployeeSlice.actions.createEmployeeFail(error.message));
+    }
+    // employees.push(employee);
+    // localStorage.setItem('employees', JSON.stringify(employees));
+    // console.log(`Nouveau profil d'employé ajouté:`, employees);
+    // openModal();
   };
   //   employees.push(employee);
   //   localStorage.setItem('employees', JSON.stringify(employees));
@@ -96,7 +127,7 @@ const useSubmitEmployee = () => {
   // localStorage.setItem('employees', JSON.stringify(employees));
 
   return {
-    handleOnChange,
+    // handleOnChange,
     handleOnSubmit,
     modalIsOpen,
     closeModal,
@@ -109,6 +140,16 @@ const useSubmitEmployee = () => {
     city,
     state,
     zipCode,
+    error,
+    setFirstName,
+    setLastName,
+    setDateOfBirth,
+    setStartDate,
+    setDepartment,
+    setStreet,
+    setCity,
+    setState,
+    setZipCode,
   };
 };
 

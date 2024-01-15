@@ -1,5 +1,3 @@
-import React from 'react';
-
 // HOME PAGE
 const HomePage = () => {
   document.title = 'HRnet - Home';
