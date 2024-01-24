@@ -16,6 +16,7 @@ const initialState = {
   // zipCode: localStorage.getItem('zipCode') || '',
   employeesList: [],
   error: null,
+  // dropdown: document.getElementById('selection_department'),
 };
 
 //User slices
@@ -48,6 +49,7 @@ const createEmployeeSlice = createSlice({
       // state.street = action.payload;
       // state.city = action.payload;
       // state.state = action.payload;
+      // state.dropdown = action.payload;
       state.employeesList.unshift(action.payload);
       state.error = null;
       state.isLoading = false;

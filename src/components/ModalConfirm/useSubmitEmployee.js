@@ -62,6 +62,8 @@ const useSubmitEmployee = () => {
   //   }
   // };
 
+  // const dep = JSON.stringify(document.getElementById('selection_department'));
+
   const [modalIsOpen, setIsOpen] = useState(false);
   function openModal() {
     setIsOpen(true);
@@ -89,6 +91,7 @@ const useSubmitEmployee = () => {
   const handleOnSubmit = async (e) => {
     e.preventDefault();
     dispatch(createEmployeeSlice.actions.createEmployeePending());
+    // console.log('value department :', dep);
     // console.log(`Nouveau profil d'employé créé:
 
     // firstName: ${firstName},

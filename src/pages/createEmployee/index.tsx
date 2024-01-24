@@ -4,6 +4,9 @@ import Modal from 'react-modal';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import useSubmitEmployee from '../../components/ModalConfirm/useSubmitEmployee.js';
+import { DropdownMenu } from 'dropdown-component-library-afarkhsi';
+import { departments, states } from 'data/dataMocked';
+// import { Dropdown } from 'dropdown-component-library';
 
 const customStyles = {
   content: {
@@ -18,6 +21,11 @@ const customStyles = {
 
 const CreateEmployee = () => {
   document.title = 'HRnet - Create';
+  // const [test, setTest] = useState('');
+  // const t = document.getElementById('selection_department')?.textContent;
+  // const myJson = stringify(t);
+  // const myObject = parse(myJson);
+  // console.log('test:', t);
   // const [modalIsOpen, setIsOpen] = useState(false);
   // function openModal() {
   //   setIsOpen(true);
@@ -51,6 +59,28 @@ const CreateEmployee = () => {
     setZipCode,
   } = useSubmitEmployee();
 
+  const options = [
+    { label: 'Paris', value: 'paris' },
+    { label: 'Lille', value: 'lille' },
+    { label: 'Lyon', value: 'lyon' },
+    { label: 'Bordeaux', value: 'bordeaux' },
+    { label: 'Marseille', value: 'marseille' },
+    { label: 'Reims', value: 'reims' },
+  ];
+
+  // Application englobante
+  function gestionnaireObjet(event: any) {
+    // Récupérez l'objet depuis l'événement
+    const objet = event.detail;
+    // Manipulez l'objet dans votre application englobante
+    setDepartment(objet);
+    setState(objet);
+  }
+
+  // Ajoutez un écouteur d'événements
+  window.addEventListener('objetEnvoye', gestionnaireObjet);
+
+  console.log('department value : ', department);
   return (
     <section>
       <div className="title">
@@ -158,7 +188,19 @@ const CreateEmployee = () => {
             />
 
             <label htmlFor="state">State</label>
-            <select
+            <DropdownMenu
+              options={states}
+              placeholder="Select an option"
+              id="state"
+              label="state"
+              name="state"
+              // defaultValue={state}
+              // onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+              //   setState(event.target.value);
+              // }}
+            />
+            {/* <Dropdown options={data} /> */}
+            {/* <select
               name="state"
               id="state"
               defaultValue={state}
@@ -168,7 +210,7 @@ const CreateEmployee = () => {
                 setState(e.target.value);
               }}
               // required
-            ></select>
+            ></select> */}
 
             <label htmlFor="zip-code">Zip Code</label>
             <input
@@ -188,7 +230,20 @@ const CreateEmployee = () => {
           </fieldset>
 
           <label htmlFor="department">Department</label>
-          <select
+
+          <DropdownMenu
+            options={departments}
+            placeholder="Select an option"
+            id="department"
+            name="department"
+            label="department"
+            // onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+            //   setDepartment(event.target.value);
+            // }}
+            // onChange={handleOnChange}
+            defaultValue={department}
+          />
+          {/* <select
             name="department"
             id="department"
             defaultValue={department}
@@ -204,7 +259,7 @@ const CreateEmployee = () => {
             <option>Engineering</option>
             <option>Human Resources</option>
             <option>Legal</option>
-          </select>
+          </select> */}
           <button type="submit" className="btn">
             Save
           </button>
@@ -218,7 +273,7 @@ const CreateEmployee = () => {
         ariaHideApp={false}
       >
         <div id="confirmation" className="modal">
-          <p>Employee Created! ahvazehuehza</p>
+          <p>Employee Created!</p>
         </div>
         {/* <button onClick={closeModal}>close</button> */}
         <FontAwesomeIcon icon={faXmark} onClick={closeModal} />

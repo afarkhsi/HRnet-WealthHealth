@@ -1,15 +1,17 @@
 import { Link } from 'react-router-dom';
 import Table from '../../components/Table/Table';
+import useSubmitEmployee from '../../components/ModalConfirm/useSubmitEmployee';
 
 // EMPLOYEE LIST PAGE
 const Employees = () => {
-  const employees = localStorage.getItem('employees');
+  const { employeesList } = useSubmitEmployee();
+  console.log('verif', employeesList);
   document.title = 'HRnet - Current Employees';
   return (
     <section>
       <div id="employee-div" className="container">
         <h1>Current Employees</h1>
-        {employees === null ? <div>Aucune données disponibles</div> : <Table />}
+        {!employeesList ? <div>Aucune données disponibles</div> : <Table />}
         <Link to="/">Home</Link>
       </div>
     </section>
