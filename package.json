@@ -10,7 +10,7 @@
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
-    "dropdown-component-library-afarkhsi": "file:../dropdown-component-library-afarkhsi",
+    "dropdown-component-library-afarkhsi": "^0.2.0",
     "flatted": "^3.2.9",
     "react": "^18.2.0",
     "react-data-table-component": "^7.5.4",

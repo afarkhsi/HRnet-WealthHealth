@@ -1,3 +1,23 @@
+.title {
+  display: flex;
+  flex-direction: column;
+  background-image: url('./../../assets/banner.jpg');
+  color: white;
+}
+
+.title h1 {
+  font-family: 'Anton', sans-serif;
+  font-size: 40px;
+  color: black;
+  text-shadow: 2px 2px #7ba07b, 0 0 8px #fdfdfd;
+}
+
+.title h2 {
+  font-family: 'Manrope', sans-serif;
+  margin-top: 0;
+  text-shadow: 2px 2px #7ba07b, 0 0 8px #000000;
+}
+
 #create-employee {
   max-width: 300px;
   width: 100%;
@@ -18,6 +38,10 @@
   border-color: #7ba07b;
 }
 
+#create-employee label {
+  font-weight: 600;
+}
+
 .form-control {
   height: 30px;
   border-radius: 5px;
@@ -28,4 +52,26 @@
 
 .form-control:focus-visible {
   border-color: #095a09;
+}
+
+.dropdown-menu {
+  position: relative;
+}
+
+.dropdown-menu_selected {
+  border: 2px solid #7ba07b !important;
+}
+
+.dropdown-menu_selected_text {
+  color: #7ba07b !important;
+}
+
+.arrow-down,
+.arrow-up {
+  border-top: solid #7ba07b !important;
+  border-left: solid #7ba07b !important;
+}
+
+.dropdown-menu_list {
+  background-color: white;
 }

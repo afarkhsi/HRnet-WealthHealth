@@ -16,6 +16,7 @@ code {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 
 .main {
@@ -25,6 +26,45 @@ code {
   justify-content: center;
   flex: 1;
   text-align: center;
+  background-image: url('./assets/banner.jpg');
+}
+
+#home_title {
+  font-family: 'Anton', sans-serif;
+  font-size: 40px;
+  text-shadow: 2px 2px #7ba07b, 0 0 8px #fdfdfd;
+}
+
+/* #home_subtitle {
+  font-family: 'Manrope', sans-serif;
+  color: white;
+  font-size: 30px;
+  text-shadow: 2px 2px #7ba07b, 0 0 8px #000000;
+} */
+
+#home_subtitle {
+  font-weight: 700;
+  text-align: center;
+  font-size: 30px;
+  font-family: 'Anton', sans-serif;
+  background: linear-gradient(90deg, #000000, #000000, #000000);
+  /* letter-spacing: 5px; */
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-repeat: no-repeat;
+  background-size: 80%;
+  animation: shine 3s linear;
+  position: relative;
+}
+
+@keyframes shine {
+  0% {
+    background-position-x: -500%;
+  }
+  100% {
+    background-position-x: 100%;
+  }
 }
 
 .container {
@@ -49,4 +89,16 @@ label {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+@keyframes slidein {
+  from {
+    margin-top: 100%;
+    width: 300%;
+  }
+
+  to {
+    margin-bottom: 0%;
+    width: 100%;
+  }
 }

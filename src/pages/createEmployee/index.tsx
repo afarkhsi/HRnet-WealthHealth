@@ -4,9 +4,8 @@ import Modal from 'react-modal';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import useSubmitEmployee from '../../components/ModalConfirm/useSubmitEmployee.js';
-import { DropdownMenu } from 'dropdown-component-library-afarkhsi';
 import { departments, states } from 'data/dataMocked';
-// import { Dropdown } from 'dropdown-component-library';
+import { DropdownMenu } from 'dropdown-component-library-afarkhsi';
 
 const customStyles = {
   content: {
@@ -21,19 +20,6 @@ const customStyles = {
 
 const CreateEmployee = () => {
   document.title = 'HRnet - Create';
-  // const [test, setTest] = useState('');
-  // const t = document.getElementById('selection_department')?.textContent;
-  // const myJson = stringify(t);
-  // const myObject = parse(myJson);
-  // console.log('test:', t);
-  // const [modalIsOpen, setIsOpen] = useState(false);
-  // function openModal() {
-  //   setIsOpen(true);
-  // }
-
-  // function closeModal() {
-  //   setIsOpen(false);
-  // }
   const {
     // handleOnChange,
     handleOnSubmit,
@@ -59,35 +45,26 @@ const CreateEmployee = () => {
     setZipCode,
   } = useSubmitEmployee();
 
-  const options = [
-    { label: 'Paris', value: 'paris' },
-    { label: 'Lille', value: 'lille' },
-    { label: 'Lyon', value: 'lyon' },
-    { label: 'Bordeaux', value: 'bordeaux' },
-    { label: 'Marseille', value: 'marseille' },
-    { label: 'Reims', value: 'reims' },
-  ];
-
   // Application englobante
   function gestionnaireObjet(event: any) {
-    // Récupérez l'objet depuis l'événement
+    // Récupére l'objet depuis l'événement
     const objet = event.detail;
-    // Manipulez l'objet dans votre application englobante
+    // Manipulez l'objet dans l'application englobante
     setDepartment(objet);
     setState(objet);
   }
 
-  // Ajoutez un écouteur d'événements
-  window.addEventListener('objetEnvoye', gestionnaireObjet);
+  // Ajout de l'écouteur d'événement dropdown
+  window.addEventListener('dropdownEvent', gestionnaireObjet);
 
   console.log('department value : ', department);
   return (
     <section>
       <div className="title">
         <h1>HRnet</h1>
+        <h2>Create Employee</h2>
       </div>
       <div className="container">
-        <h2>Create Employee</h2>
         <form
           action="#"
           id="create-employee"
@@ -194,10 +171,11 @@ const CreateEmployee = () => {
               id="state"
               label="state"
               name="state"
-              // defaultValue={state}
+              defaultValue={state}
               // onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
               //   setState(event.target.value);
               // }}
+              required
             />
             {/* <Dropdown options={data} /> */}
             {/* <select
@@ -242,6 +220,7 @@ const CreateEmployee = () => {
             // }}
             // onChange={handleOnChange}
             defaultValue={department}
+            required
           />
           {/* <select
             name="department"
