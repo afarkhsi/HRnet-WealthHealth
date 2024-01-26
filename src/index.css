@@ -42,6 +42,12 @@ code {
   text-shadow: 2px 2px #7ba07b, 0 0 8px #000000;
 } */
 
+#home {
+  background-color: #ffffff40 !important;
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+}
+
 #home_subtitle {
   font-weight: 700;
   text-align: center;
@@ -89,6 +95,39 @@ label {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.modal {
+  font-weight: bold;
+}
+.Modal {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 10px;
+  /* top: 40px;
+  left: 40px;
+  right: 40px;
+  bottom: 40px; */
+  max-width: 200px;
+  height: 100px;
+  width: 100%;
+  background-color: rgb(255, 255, 255);
+  border-radius: 5px;
+}
+
+.Modal svg {
+  cursor: pointer;
+}
+
+.Modal svg:hover {
+  color: #7ba07b;
+}
+
+.svg-inline--fa {
+  position: absolute;
+  top: 10px;
+  right: 10px;
 }
 
 @keyframes slidein {

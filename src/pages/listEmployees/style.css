@@ -1,0 +1,30 @@
+.container_list {
+  background-color: #ffffff40 !important;
+  /* max-width: 400px;
+    width: 100%; */
+  margin: 10px auto;
+  padding: 10px 0;
+  border-radius: 5px;
+  border: 1px solid #ffffff40;
+  flex: 1;
+}
+
+.table {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.home-link {
+  text-decoration: none;
+  color: white;
+  padding-top: 10px;
+  font-weight: bold;
+}
+
+.home-link:hover {
+  text-decoration: none;
+  color: rgb(125, 12, 12);
+}

@@ -250,6 +250,7 @@ const CreateEmployee = () => {
         style={customStyles}
         contentLabel="Example Modal"
         ariaHideApp={false}
+        className="Modal"
       >
         <div id="confirmation" className="modal">
           <p>Employee Created!</p>
