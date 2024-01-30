@@ -239,7 +239,6 @@ const states = [
 
 const employeesListMocked = [
   {
-    id: 1,
     firstName: 'James',
     lastName: 'Cameron',
     dateOfBirth: '02/04/1980',
@@ -251,7 +250,6 @@ const employeesListMocked = [
     department: 'Sales',
   },
   {
-    id: 2,
     firstName: 'Leon',
     lastName: 'Edwards',
     dateOfBirth: '12/08/1990',

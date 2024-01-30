@@ -1,10 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { employeesListMocked } from 'data/dataMocked';
 
 //Initial employee state
 const initialState = {
   isLoading: false,
   isCreated: false,
-  employeesList: [],
+  employeesList: employeesListMocked,
   error: null,
 };
 
