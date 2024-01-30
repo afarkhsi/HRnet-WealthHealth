@@ -28,7 +28,6 @@ const Header = (): JSX.Element => {
       <Link className="header_logo" to="/">
         <img className="header_logo_img" src={Logo} alt="WealthHealth logo" />
       </Link>
-      {/* <p>HRnet</p> */}
       <div className="header_nav">
         <NavLink className="header_nav_link" to="/employee/create">
           Create Employee

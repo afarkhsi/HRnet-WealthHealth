@@ -18,10 +18,10 @@ const customStyles = {
   },
 };
 
+// CREATE EMPLOYEE PAGE
 const CreateEmployee = () => {
   document.title = 'HRnet - Create';
   const {
-    // handleOnChange,
     handleOnSubmit,
     modalIsOpen,
     closeModal,
@@ -65,12 +65,7 @@ const CreateEmployee = () => {
         <h2>Create Employee</h2>
       </div>
       <div className="container">
-        <form
-          action="#"
-          id="create-employee"
-          // className="form-group"
-          onSubmit={handleOnSubmit}
-        >
+        <form action="#" id="create-employee" onSubmit={handleOnSubmit}>
           <label htmlFor="first-name">First Name</label>
           <input
             type="text"
@@ -79,8 +74,6 @@ const CreateEmployee = () => {
             className="form-control"
             placeholder="Enter Firstname"
             defaultValue={firstName}
-            // onChange={handleOnChange}
-            // onChange={(e) => e.target.value}
             onChange={(e) => {
               setFirstName(e.target.value);
             }}
@@ -95,8 +88,6 @@ const CreateEmployee = () => {
             className="form-control"
             placeholder="Enter Lastname"
             defaultValue={lastName}
-            // onChange={handleOnChange}
-            // onChange={(e) => e.target.value}
             onChange={(e) => {
               setLastName(e.target.value);
             }}
@@ -107,10 +98,6 @@ const CreateEmployee = () => {
           <DateTime
             name="date-of-birth"
             defaultValue={dateOfBirth}
-            // onChange={handleOnChange}
-            // onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
-            //   event.target.value
-            // }
             onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
               setDateOfBirth(event.target.value);
             }}
@@ -120,10 +107,6 @@ const CreateEmployee = () => {
           <DateTime
             name="start-date"
             defaultValue={startDate}
-            // onChange={handleOnChange}
-            // onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
-            //   event.target.value
-            // }
             onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
               setStartDate(event.target.value);
             }}
@@ -140,8 +123,6 @@ const CreateEmployee = () => {
               type="text"
               placeholder="Enter Street"
               defaultValue={street}
-              // onChange={handleOnChange}
-              // onChange={(e) => e.target.value}
               onChange={(e) => {
                 setStreet(e.target.value);
               }}
@@ -156,8 +137,6 @@ const CreateEmployee = () => {
               type="text"
               placeholder="Enter City"
               defaultValue={city}
-              // onChange={handleOnChange}
-              // onChange={(e) => e.target.value}
               onChange={(e) => {
                 setCity(e.target.value);
               }}
@@ -172,23 +151,8 @@ const CreateEmployee = () => {
               label="state"
               name="state"
               defaultValue={state}
-              // onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
-              //   setState(event.target.value);
-              // }}
               required
             />
-            {/* <Dropdown options={data} /> */}
-            {/* <select
-              name="state"
-              id="state"
-              defaultValue={state}
-              // onChange={handleOnChange}
-              // onChange={(e) => e.target.value}
-              onChange={(e) => {
-                setState(e.target.value);
-              }}
-              // required
-            ></select> */}
 
             <label htmlFor="zip-code">Zip Code</label>
             <input
@@ -198,8 +162,6 @@ const CreateEmployee = () => {
               type="number"
               placeholder="Enter Zip Code"
               defaultValue={zipCode}
-              // onChange={handleOnChange}
-              // onChange={(e) => e.target.value}
               onChange={(e) => {
                 setZipCode(e.target.value);
               }}
@@ -215,30 +177,10 @@ const CreateEmployee = () => {
             id="department"
             name="department"
             label="department"
-            // onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
-            //   setDepartment(event.target.value);
-            // }}
-            // onChange={handleOnChange}
             defaultValue={department}
             required
           />
-          {/* <select
-            name="department"
-            id="department"
-            defaultValue={department}
-            // onChange={handleOnChange}
-            // onChange={(e) => e.target.value}
-            onChange={(e) => {
-              setDepartment(e.target.value);
-            }}
-            required
-          >
-            <option>Sales</option>
-            <option>Marketing</option>
-            <option>Engineering</option>
-            <option>Human Resources</option>
-            <option>Legal</option>
-          </select> */}
+
           <button type="submit" className="btn">
             Save
           </button>
@@ -255,10 +197,8 @@ const CreateEmployee = () => {
         <div id="confirmation" className="modal">
           <p>Employee Created!</p>
         </div>
-        {/* <button onClick={closeModal}>close</button> */}
         <FontAwesomeIcon icon={faXmark} onClick={closeModal} />
       </Modal>
-      {/* {modalIsOpen ? <Modal /> : ''} */}
     </section>
   );
 };
