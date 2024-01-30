@@ -10,8 +10,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ### Description:
 
-WealthHealth est une grande société financière utilise qui une application web interne (HRnet) afin de gerer les dossiers de leurs employés.
-Dans le cadre de ce projet de developpement, la direction de WealthHealthle a fait part de sa volonté au département technologique de convertir le site en React et remplacer les plugin JQuery utilisés sur la version static par des composants réutilisables.
+WealthHealth est une grande société financière qui utilise une application web interne (HRnet) afin de gerer les dossiers de leurs employés.
+Dans le cadre de ce projet de developpement, la direction de WealthHealth a fait part de sa volonté au département technologique de convertir le site en React et remplacer les plugin JQuery utilisés sur la version static par des composants réutilisables.
 
 ### Objectif
 
