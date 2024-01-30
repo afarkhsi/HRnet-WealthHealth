@@ -8,6 +8,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ![typescript][typescript-badge]
 ![react][react-badge]
 
+![banner readme](./src/assets/Capture%20d'écran%202024-01-30%20160543.png)
+
 ### Description:
 
 WealthHealth est une grande société financière qui utilise une application web interne (HRnet) afin de gerer les dossiers de leurs employés.
