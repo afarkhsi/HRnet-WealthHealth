@@ -1,7 +1,7 @@
 .container_list {
   background-color: #ffffff40 !important;
   margin: 10px auto;
-  padding: 10px 0;
+  padding: 10px 10px;
   border-radius: 5px;
   border: 1px solid #ffffff40;
   flex: 1;
@@ -25,4 +25,14 @@
 .home-link:hover {
   text-decoration: none;
   color: rgb(125, 12, 12);
+}
+
+.table {
+  display: flex;
+  flex-direction: column;
+  padding: 0px 10px;
+}
+
+.hide {
+  display: none;
 }

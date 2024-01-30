@@ -3,56 +3,49 @@ import useSubmitEmployee from '../ModalConfirm/useSubmitEmployee';
 // Table hook
 const useDataTable = () => {
   const { employeesList } = useSubmitEmployee();
+
   const data = employeesList;
-  console.log('TEST LISTE', data);
+
   const columns = [
     {
       name: 'First Name',
-      selector: (row) => row.firstName,
-      data: 'firstName',
+      id: 'firstName',
       sortable: true,
     },
     {
       name: 'Last Name',
-      selector: (row) => row.lastName,
-      data: 'lastName',
+      id: 'lastName',
       sortable: true,
     },
     {
       name: 'Start Date',
-      selector: (row) => row.startDate,
-      data: 'startDate',
+      id: 'startDate',
       sortable: true,
     },
     {
       name: 'Department',
-      selector: (row) => row.department,
-      data: 'department',
+      id: 'department',
       sortable: true,
     },
     {
       name: 'Date of Birth',
-      selector: (row) => row.dateOfBirth,
-      data: 'dateOfBirth',
+      id: 'dateOfBirth',
       sortable: true,
     },
     {
       name: 'Street',
-      selector: (row) => row.street,
-      data: 'street',
+      id: 'street',
       sortable: true,
     },
-    { name: 'City', selector: (row) => row.city, data: 'city', sortable: true },
+    { name: 'City', id: 'city', sortable: true },
     {
       name: 'State',
-      selector: (row) => row.state,
-      data: 'state',
+      id: 'state',
       sortable: true,
     },
     {
       name: 'Zip Code',
-      selector: (row) => row.zipCode,
-      data: 'zipCode',
+      id: 'zipCode',
       sortable: true,
     },
   ];

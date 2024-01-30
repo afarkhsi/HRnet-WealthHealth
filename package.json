@@ -13,6 +13,7 @@
     "dropdown-component-library-afarkhsi": "^0.2.0",
     "flatted": "^3.2.9",
     "react": "^18.2.0",
+    "react-ab-data-table": "^0.0.6",
     "react-data-table-component": "^7.5.4",
     "react-date-picker": "^10.6.0",
     "react-dom": "^18.2.0",
