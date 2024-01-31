@@ -1,5 +1,5 @@
 .container_list {
-  background-color: #ffffff40 !important;
+  background-color: #00000060 !important;
   margin: 10px auto;
   padding: 10px 10px;
   border-radius: 5px;
@@ -13,18 +13,28 @@
   justify-content: center;
   align-items: center;
   text-align: center;
+  animation: 1s ease-in-out;
 }
 
 .home-link {
   text-decoration: none;
-  color: white;
-  padding-top: 10px;
+  background-color: #ffffff;
+  color: #7ba07b;
+  padding: 5px 0px;
+  margin-bottom: 10px;
   font-weight: bold;
+  width: 100px;
+  border: 2px solid #7ba07b;
+  border-radius: 10px;
+  transition: background-color 0.5s;
+  text-align: center;
 }
 
 .home-link:hover {
   text-decoration: none;
-  color: rgb(125, 12, 12);
+  background-color: #b60b0b;
+  border: 2px solid #b60b0b;
+  color: rgb(255, 255, 255);
 }
 
 .table {
@@ -35,4 +45,16 @@
 
 .hide {
   display: none;
+}
+
+.data-table-header-th,
+.data-tables-info,
+.data-tables-length-label,
+.form-label {
+  font-weight: 600;
+  color: #fefffe;
+}
+
+.data-tables-info {
+  text-decoration: underline;
 }

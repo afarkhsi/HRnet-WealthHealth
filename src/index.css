@@ -27,21 +27,25 @@ code {
   flex: 1;
   text-align: center;
   background-image: url('./assets/banner.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 #home_title {
+  color: white;
   font-family: 'Anton', sans-serif;
   font-size: 40px;
   text-shadow: 2px 2px #7ba07b, 0 0 8px #fdfdfd;
 }
 
 #home {
-  background-color: #ffffff40 !important;
+  background-color: #00000060 !important;
   border-top: 1px solid white;
   border-bottom: 1px solid white;
 }
 
 #home_subtitle {
+  color: white;
   font-weight: 700;
   text-align: center;
   font-size: 30px;
@@ -55,6 +59,12 @@ code {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background-color: #00000060 !important;
+  max-width: 400px;
+  width: 100%;
+  margin: 10px auto;
+  border-radius: 5px;
+  border: 1px solid #ffffff40;
 }
 
 label {

@@ -25,15 +25,6 @@ section {
   text-shadow: 2px 2px #7ba07b, 0 0 8px #000000;
 }
 
-.container {
-  background-color: #ffffff60 !important;
-  max-width: 400px;
-  width: 100%;
-  margin: 10px auto;
-  border-radius: 5px;
-  border: 1px solid #ffffff40;
-}
-
 #create-employee {
   max-width: 300px;
   width: 100%;
@@ -47,6 +38,7 @@ section {
 }
 .btn {
   background-color: #7ba07b;
+  cursor: pointer;
   color: white;
   text-align: center;
   height: 30px;
@@ -56,6 +48,13 @@ section {
 
 #create-employee label {
   font-weight: 600;
+  color: #d1e4d1;
+}
+
+.address legend {
+  font-weight: 400;
+  font-style: italic;
+  color: #d1e4d1;
 }
 
 .form-control {
@@ -78,6 +77,7 @@ section {
   border: 2px solid #7ba07b !important;
   background-color: white;
   height: 30px !important;
+  cursor: pointer;
 }
 
 .dropdown-menu_selected_open {

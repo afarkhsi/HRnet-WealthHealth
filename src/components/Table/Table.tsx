@@ -1,7 +1,5 @@
-// import DataTable from 'react-data-table-component';
 import { DataTable } from 'react-ab-data-table';
 import useDataTable from './useDataTable';
-// import { columns, data } from './useDataTable';
 
 /**
  * Create a Table component
