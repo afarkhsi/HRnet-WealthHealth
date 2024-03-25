@@ -7,6 +7,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ![javascript][javascript-badge]
 ![typescript][typescript-badge]
 ![react][react-badge]
+![redux][redux-badge]
 
 ![banner readme](./src/assets/Capture%20d'écran%202024-01-30%20160543.png)
 
@@ -41,3 +42,4 @@ Dans le cadre de ce projet de developpement, la direction de WealthHealth a fait
 [javascript-badge]: https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black
 [typescript-badge]: https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white
 [react-badge]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
+[redux-badge]: https://img.shields.io/badge/Redux-20232A?style=for-the-badge&logo=redux&logoColor=61DAFB
